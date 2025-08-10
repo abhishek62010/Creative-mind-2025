@@ -6,7 +6,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const jumpBtn = document.getElementById('jumpBtn');
   const swapBtn = document.getElementById('swapBtn');
 
+  let isAnimating = false;
+
   function wave() {
+    if (isAnimating) return;
+    isAnimating = true;
     arm.animate([
       { transform: 'translate(130px, 90px) rotate(0deg)' },
       { transform: 'translate(130px, 90px) rotate(-25deg)' },
@@ -14,10 +18,12 @@ document.addEventListener('DOMContentLoaded', () => {
     ], {
       duration: 600,
       iterations: 3
-    });
+    }).onfinish = () => isAnimating = false;
   }
 
   function jump() {
+    if (isAnimating) return;
+    isAnimating = true;
     char.animate([
       { transform: 'translateY(0)' },
       { transform: 'translateY(-30px)' },
@@ -25,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ], {
       duration: 500,
       iterations: 1
-    });
+    }).onfinish = () => isAnimating = false;
   }
 
   function swapColors() {
