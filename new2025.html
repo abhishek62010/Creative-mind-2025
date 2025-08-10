@@ -1,1 +1,88 @@
-creative
+<!-- index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cartoon Cove — Starter</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Nunito:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="stage" role="main">
+    <header>
+      <div class="logo" aria-hidden="true"><h1>CC</h1></div>
+      <div class="title">
+        <h2>Cartoon Cove</h2>
+        <p class="muted">A playful starter site — click the character. Contributions welcome!</p>
+      </div>
+      <nav>
+        <button class="btn" onclick="alert('Fork the repo and submit a PR!')">Contribute</button>
+      </nav>
+    </header>
+
+    <div class="scene">
+      <section class="left">
+        <div class="cloud" aria-hidden="true"></div>
+        <div class="cloud c2" aria-hidden="true"></div>
+
+        <div class="bubble" id="bubble">Hi — click me to wave! ✋</div>
+
+        <div class="character" id="char" role="button" tabindex="0" aria-label="Wave to the character">
+          <svg viewBox="0 0 200 240" width="240" height="260" aria-hidden="true">
+            <defs>
+              <linearGradient id="g1" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0%" stop-color="#ffd5e0" />
+                <stop offset="100%" stop-color="#ff9cb9" />
+              </linearGradient>
+            </defs>
+            <g transform="translate(20,10)">
+              <ellipse cx="80" cy="150" rx="70" ry="40" fill="#fff" opacity="0.15"/>
+              <rect x="20" y="60" width="120" height="120" rx="40" fill="url(#g1)" stroke="#ff7aa2" stroke-width="4" />
+              <circle cx="80" cy="90" r="32" fill="#fff"/>
+              <circle cx="68" cy="86" r="6" class="eye" fill="#222"/>
+              <circle cx="92" cy="86" r="6" class="eye" fill="#222"/>
+              <path id="smile" d="M62 102 Q80 116 98 102" stroke="#b3436c" stroke-width="4" fill="none" stroke-linecap="round"/>
+              <g id="arm" transform="translate(130,90) rotate(0)">
+                <path d="M0 0 C20 -10 26 -6 40 6 C50 12 56 28 40 36 C22 46 6 36 0 28" fill="#ffd5e0" stroke="#ff7aa2" stroke-width="3"/>
+              </g>
+              <path d="M48 64 Q80 44 112 64" fill="#ffd56b" stroke="#ffb36b" stroke-width="3"/>
+            </g>
+          </svg>
+        </div>
+
+        <div class="ground" aria-hidden="true"></div>
+      </section>
+
+      <aside class="right">
+        <div class="card">
+          <h3>About</h3>
+          <p class="muted">Cartoon Cove is a fun, editable starter page for GitHub Pages. Add characters, scenes, or tiny interactions and open a PR.</p>
+        </div>
+
+        <div class="card">
+          <h3>Actions</h3>
+          <div class="controls">
+            <button class="btn" id="waveBtn">Make it wave</button>
+            <button class="btn" id="jumpBtn">Jump</button>
+            <button class="btn" id="swapBtn">Change Colors</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Contribute</h3>
+          <p class="muted">Fork the repo, add your feature (SVGs, CSS animations, or levels), and submit a pull request. Keep files small and modular.</p>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      Made with ❤️ — customize this page and push to GitHub Pages.
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
