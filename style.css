@@ -1,0 +1,49 @@
+
+:root{
+  --sky1:#a0e9ff; --sky2:#ffd6f0; --accent:#ff7aa2; --card:#fff7f0; --shadow: rgba(10,10,10,0.08);
+  --glass: rgba(255,255,255,0.6);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family: 'Nunito', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial}
+body{
+  background: linear-gradient(160deg,var(--sky1) 0%, var(--sky2) 100%);
+  display:flex;align-items:center;justify-content:center;padding:40px;
+  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+}
+.stage{
+  width:100%;max-width:1100px;background:linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.95));
+  border-radius:28px;padding:28px;box-shadow:0 12px 40px var(--shadow);position:relative;overflow:hidden;
+}
+header{display:flex;gap:18px;align-items:center;margin-bottom:18px;}
+.logo{
+  width:84px;height:84px;border-radius:18px;background:linear-gradient(135deg,var(--accent),#ffd56b);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(255,122,162,0.2);
+}
+.logo h1{font-family: 'Baloo 2', cursive;margin:0;color:#fff;font-size:20px}
+.title{flex:1}
+.title h2{margin:0;font-family: 'Baloo 2', cursive;font-size:26px}
+.title p{margin:2px 0 0 0;color:#555;font-size:14px}
+.scene{display:grid;grid-template-columns:1fr 420px;gap:20px;align-items:stretch}
+@media (max-width:900px){.scene{grid-template-columns:1fr;}}
+.left{
+  padding:18px;border-radius:18px;background:linear-gradient(180deg,var(--card),#fff);box-shadow:0 6px 18px var(--shadow);min-height:420px;position:relative;overflow:hidden;
+}
+.cloud{position:absolute;top:20px;left:20px;width:200px;height:110px;border-radius:60px;background:var(--glass);filter:blur(8px);opacity:0.9;transform:translateZ(0);animation:float 8s ease-in-out infinite}
+.cloud.c2{top:60px;right:40px;left:auto;width:240px;height:120px;animation-duration:11s}
+@keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-14px)}100%{transform:translateY(0)}}
+.ground{position:absolute;left:0;right:0;bottom:0;height:140px;background:linear-gradient(180deg,#98e6a5,#45c47a);border-top-left-radius:32px;border-top-right-radius:32px}
+.character{
+  position:absolute;left:34px;bottom:64px;width:240px;height:260px;display:flex;align-items:flex-end;justify-content:center;cursor:pointer;
+  transition:transform .25s ease;transform-origin:center bottom;
+}
+.character:hover{transform:translateY(-6px) scale(1.02)}
+.bubble{position:absolute;left:120px;bottom:210px;background:white;padding:12px 16px;border-radius:14px;box-shadow:0 8px 20px rgba(0,0,0,0.12);max-width:230px;font-size:14px;display:none}
+.bubble:after{content:"";position:absolute;left:12px;bottom:-10px;border-width:10px 8px 0 8px;border-style:solid;border-color:white transparent transparent transparent}
+.right{display:flex;flex-direction:column;gap:14px}
+.card{background:linear-gradient(180deg,#fff,#fff7);padding:14px;border-radius:14px;box-shadow:0 8px 18px rgba(10,10,10,0.04)}
+.card h3{margin:0 0 6px 0;font-size:16px}
+.controls{display:flex;gap:8px;flex-wrap:wrap}
+.btn{background:var(--accent);color:white;padding:8px 12px;border-radius:10px;border:none;cursor:pointer;font-weight:600}
+footer{margin-top:16px;text-align:center;color:#666;font-size:13px}
+.eye{transform-origin:center;animation:blink 6s infinite}
+@keyframes blink{0%,4%,100%{transform:scaleY(1)}2%{transform:scaleY(0.08)}}
+.muted{color:#666;font-size:13px}
